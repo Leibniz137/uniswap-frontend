@@ -56,6 +56,7 @@
   "enterCurrencyOrLabelCont": "Enter a {{ inputCurrency }} or {{ label }} value to continue.",
   "youAreAdding": "You are adding",
   "and": "and",
+  "and": "và",
   "intoPool": "into the liquidity pool.",
   "outPool": "from the liquidity pool.",
   "youWillMint": "You will mint",
