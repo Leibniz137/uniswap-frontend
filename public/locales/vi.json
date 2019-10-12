@@ -55,6 +55,7 @@
   "to": "đến",
   "addLiquidity": "Add Liquidity",
   "deposit": "Deposit",
+  "deposit": "Gửi tiền",
   "currentPoolSize": "Current Pool Size",
   "yourPoolShare": "Your Pool Share",
   "noZero": "Amount cannot be zero.",
