@@ -83,6 +83,7 @@
   "tokenAddress": "Token Address",
   "label": "Label",
   "name": "Name",
+  "name": "Tên",
   "symbol": "Symbol",
   "decimals": "Decimals",
   "enterTokenCont": "Enter a token address to continue",
