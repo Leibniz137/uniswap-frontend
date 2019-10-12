@@ -10,9 +10,11 @@
   "swap": "Đổi",
   "swapAnyway": "Swap Anyway",
   "send": "Send",
+  # note: should this be gửi instead?
   "send": "chuyển khoản",
   "sendAnyway": "Send Anyway",
   "pool": "Pool",
+  "pool": "Để chung vốn",
   "betaWarning": "This project is in beta. Use at your own risk.",
   "input": "Input",
   "output": "Output",
