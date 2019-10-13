@@ -56,6 +56,7 @@
   "noRecipient": "Enter a wallet address to send to.",
   "invalidRecipient": "Please enter a valid wallet address recipient.",
   "recipientAddress": "Recipient Address",
+  "recipientAddress": "Địa chỉ người nhận",
   "youAreSending": "You are sending",
   "youAreSending": "Bạn đang gửi",
   "willReceive": "will receive at least",
