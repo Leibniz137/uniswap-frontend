@@ -21,6 +21,7 @@
   "output": "Output",
   "output": "Đầu ra",
   "estimated": "estimated",
+  "estimated": "ước lượng",
   "balance": "Balance: {{ balanceInput }}",
   "unlock": "Unlock",
   "pending": "Pending",
