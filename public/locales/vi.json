@@ -11,8 +11,7 @@
   "swap": "Đổi",
   "swapAnyway": "Swap Anyway",
   "send": "Send",
-  # note: should this be gửi instead?
-  "send": "chuyển khoản",
+  "send": "Gửi",
   "sendAnyway": "Send Anyway",
   "pool": "Pool",
   "pool": "Để chung vốn",
