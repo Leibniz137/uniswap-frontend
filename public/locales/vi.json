@@ -107,6 +107,7 @@
   "symbol": "Symbol",
   "symbol": "Biểu tượng",
   "decimals": "Decimals",
+  "decimals": "Số thập phân",
   "enterTokenCont": "Enter a token address to continue",
   "priceChange": "Expected price slippage",
   "forAtLeast": "for at least "
