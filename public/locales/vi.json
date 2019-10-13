@@ -95,6 +95,7 @@
   "createExchange": "Create Exchange",
   "createExchange": "Tạo giao dịch",
   "invalidTokenAddress": "Not a valid token address",
+  "invalidTokenAddress": "Địa chỉ đồng tiền điện tủ không hợp lệ",
   "exchangeExists": "{{ label }} Exchange already exists!",
   "invalidSymbol": "Invalid symbol",
   "invalidDecimals": "Invalid decimals",
