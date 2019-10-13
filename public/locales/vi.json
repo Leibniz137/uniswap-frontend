@@ -98,7 +98,9 @@
   "invalidTokenAddress": "Địa chỉ đồng tiền điện tủ không hợp lệ",
   "exchangeExists": "{{ label }} Exchange already exists!",
   "invalidSymbol": "Invalid symbol",
+  "invalidSymbol": "Biểu tượng không hợp lệ",
   "invalidDecimals": "Invalid decimals",
+  "invalidDecimals": "Số thập phân không hợp lệ",
   "tokenAddress": "Token Address",
   "tokenAddress": "Địa chỉ đồng tiền điện tử",
   "label": "Label",
