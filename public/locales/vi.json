@@ -17,9 +17,9 @@
   "pool": "Để chung vốn",
   "betaWarning": "This project is in beta. Use at your own risk.",
   "input": "Input",
-  "input": "Đầo vào",
+  "input": "Đầu vào",
   "output": "Output",
-  "output": "Đầo ra",
+  "output": "Đầu ra",
   "estimated": "estimated",
   "balance": "Balance: {{ balanceInput }}",
   "unlock": "Unlock",
