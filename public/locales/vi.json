@@ -91,7 +91,7 @@
   "youWillRemove": "You will remove",
   "youWillRemove": "Bạn sẽ loại bỏ",
   "createExchange": "Create Exchange",
-  "createExchange": "Tạo thu đổi",
+  "createExchange": "Tạo giao dịch",
   "invalidTokenAddress": "Not a valid token address",
   "exchangeExists": "{{ label }} Exchange already exists!",
   "invalidSymbol": "Invalid symbol",
