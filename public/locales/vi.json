@@ -29,6 +29,7 @@
   "unlock": "Unlock",
   "unlock": "Mở khóa",
   "pending": "Pending",
+  "pending": "Đang chờ xử lý",
   "selectToken": "Select a token",
   "selectToken": "Chọn một đồng tiền diện tử",
   "searchOrPaste": "Search Token Name, Symbol, or Address",
