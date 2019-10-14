@@ -98,6 +98,7 @@
   "poolTokens": "Pool Tokens",
   "poolTokens": "Để chung vốn đồng tiền điện tử",
   "enterLabelCont": "Enter a {{ label }} value to continue.",
+  "enterLabelCont": "Nhập giá trị {{ label }} để tiếp tục",
   "youAreRemoving": "You are removing between",
   "youWillRemove": "You will remove",
   "youWillRemove": "Bạn sẽ loại bỏ",
