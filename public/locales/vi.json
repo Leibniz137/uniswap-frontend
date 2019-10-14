@@ -30,6 +30,7 @@
   "unlock": "Mở khóa",
   "pending": "Pending",
   "selectToken": "Select a token",
+  "selectToken": "Chọn một đồng tiền diện tử",
   "searchOrPaste": "Search Token Name, Symbol, or Address",
   "searchOrPasteMobile": "Name, Symbol, or Address",
   "noExchange": "No Exchange Found",
