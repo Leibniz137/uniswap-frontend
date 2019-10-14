@@ -96,6 +96,7 @@
   "initialExchangeRate": "The initial exchange rate will be set based on your deposits. Please make sure that your ETH and {{ label }} deposits have the same fiat value.",
   "removeLiquidity": "Remove Liquidity",
   "poolTokens": "Pool Tokens",
+  "poolTokens": "Để chung vốn đồng tiền điện tử",
   "enterLabelCont": "Enter a {{ label }} value to continue.",
   "youAreRemoving": "You are removing between",
   "youWillRemove": "You will remove",
