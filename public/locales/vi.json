@@ -126,6 +126,7 @@
   "decimals": "Số thập phân",
   "enterTokenCont": "Enter a token address to continue",
   "priceChange": "Expected price slippage",
+  "priceChange": "Trượt giá dự kiến",
   "forAtLeast": "for at least ",
   "forAtLeast": "cho ít nhất "
 }
