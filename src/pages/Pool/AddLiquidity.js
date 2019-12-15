@@ -1,6 +1,5 @@
 import React, { useReducer, useState, useCallback, useEffect, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useWeb3Context } from 'web3-react'
 import { createBrowserHistory } from 'history'
 import { ethers } from 'ethers'
 import ReactGA from 'react-ga'
@@ -11,12 +10,11 @@ import CurrencyInputPanel from '../../components/CurrencyInputPanel'
 import OversizedPanel from '../../components/OversizedPanel'
 import ContextualInfo from '../../components/ContextualInfo'
 import { ReactComponent as Plus } from '../../assets/images/plus-blue.svg'
-
-import { useExchangeContract } from '../../hooks'
+import { useWeb3React, useExchangeContract } from '../../hooks'
+import { brokenTokens } from '../../constants'
 import { amountFormatter, calculateGasMargin } from '../../utils'
 import { useTransactionAdder } from '../../contexts/Transactions'
 import { useTokenDetails } from '../../contexts/Tokens'
-import { useFetchAllBalances } from '../../contexts/AllBalances'
 import { useAddressBalance, useExchangeReserves } from '../../contexts/Balances'
 import { useAddressAllowance } from '../../contexts/Allowances'
 
@@ -200,7 +198,7 @@ function getMarketRate(reserveETH, reserveToken, decimals, invert = false) {
 
 export default function AddLiquidity({ params }) {
   const { t } = useTranslation()
-  const { library, active, account } = useWeb3Context()
+  const { library, account, active } = useWeb3React()
 
   // clear url of query
   useEffect(() => {
@@ -220,6 +218,8 @@ export default function AddLiquidity({ params }) {
   const [outputValueParsed, setOutputValueParsed] = useState()
   const [inputError, setInputError] = useState()
   const [outputError, setOutputError] = useState()
+
+  const [brokenTokenWarning, setBrokenTokenWarning] = useState()
 
   const { symbol, decimals, exchangeAddress } = useTokenDetails(outputCurrency)
   const exchangeContract = useExchangeContract(exchangeAddress)
@@ -352,8 +352,10 @@ export default function AddLiquidity({ params }) {
   function renderSummary() {
     let contextualInfo = ''
     let isError = false
-
-    if (inputError || outputError) {
+    if (brokenTokenWarning) {
+      contextualInfo = t('brokenToken')
+      isError = true
+    } else if (inputError || outputError) {
       contextualInfo = inputError || outputError
       isError = true
     } else if (!inputCurrency || !outputCurrency) {
@@ -414,7 +416,16 @@ export default function AddLiquidity({ params }) {
 
   function formatBalance(value) {
     return `Balance: ${value}`
-  }
+  } // check for broken tokens
+
+  useEffect(() => {
+    setBrokenTokenWarning(false)
+    for (let i = 0; i < brokenTokens.length; i++) {
+      if (brokenTokens[i].toLowerCase() === outputCurrency.toLowerCase()) {
+        setBrokenTokenWarning(true)
+      }
+    }
+  }, [outputCurrency])
 
   useEffect(() => {
     if (isNewExchange) {
@@ -537,6 +548,7 @@ export default function AddLiquidity({ params }) {
   }, [inputValueParsed, inputBalance, outputValueMax, outputBalance, t])
 
   const allowance = useAddressAllowance(account, outputCurrency, exchangeAddress)
+
   const [showUnlock, setShowUnlock] = useState(false)
   useEffect(() => {
     if (outputValueParsed && allowance) {
@@ -552,9 +564,7 @@ export default function AddLiquidity({ params }) {
   }, [outputValueParsed, allowance, t])
 
   const isActive = active && account
-  const isValid = (inputError === null || outputError === null) && !showUnlock
-
-  const allBalances = useFetchAllBalances()
+  const isValid = (inputError === null || outputError === null) && !showUnlock && !brokenTokenWarning
 
   return (
     <>
@@ -572,7 +582,6 @@ export default function AddLiquidity({ params }) {
 
       <CurrencyInputPanel
         title={t('deposit')}
-        allBalances={allBalances}
         extraText={inputBalance && formatBalance(amountFormatter(inputBalance, 18, 4))}
         onValueChange={inputValue => {
           dispatchAddLiquidityState({ type: 'UPDATE_VALUE', payload: { value: inputValue, field: INPUT } })
@@ -600,9 +609,10 @@ export default function AddLiquidity({ params }) {
       </OversizedPanel>
       <CurrencyInputPanel
         title={t('deposit')}
-        allBalances={allBalances}
         description={isNewExchange ? '' : outputValue ? `(${t('estimated')})` : ''}
-        extraText={outputBalance && formatBalance(amountFormatter(outputBalance, decimals, Math.min(decimals, 4)))}
+        extraText={
+          outputBalance && decimals && formatBalance(amountFormatter(outputBalance, decimals, Math.min(decimals, 4)))
+        }
         selectedTokenAddress={outputCurrency}
         onCurrencySelected={outputCurrency => {
           dispatchAddLiquidityState({ type: 'SELECT_CURRENCY', payload: outputCurrency })
