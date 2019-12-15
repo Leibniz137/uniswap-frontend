@@ -1,32 +1,3 @@
-# token -> đồng tiền điện tử
-#  question: is this token or cryptocurrency?
-# trust wallet website uses "đồng tiền mã hóa"
-
-# liquidity -> tính lưu động
-# or tính thanh khoản?
-
-# liquidity token -> dồng thanh khoản
-
-# pool token ->
-
-# liquidity pool -> nhóm thanh khoản
-
-# pool (verb) -> Để chung vốn
-
-# wallet ví tiền
-
-# slippage -> trượt giá
-
-# exchange (noun) -> giao dịch
-
-# input -> nhập vào
-
-# wallet address -> địa chỉ ví
-
-# transaction -> giao dịch
-
-# quỹ -> pool
-
 {
   "noWallet": "No Ethereum wallet found",
   "noWallet": "Không tìm thấy ví tiền Ethereum",
